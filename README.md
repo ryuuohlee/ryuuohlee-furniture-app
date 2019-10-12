@@ -1,13 +1,12 @@
-# Project Name
+# Ikea Item Description
 
 > Project description
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/FEC-HRR41-PICOLLO/DavidFuent1-Ikea-PhotoCarousel
+  - https://github.com/FEC-HRR41-PICOLLO/darjama-ikea-reviews
+  - https://github.com/FEC-HRR41-PICOLLO/djason-ikea-similar-products
 
 ## Table of Contents
 
