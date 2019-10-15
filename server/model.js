@@ -1,14 +1,15 @@
-//uses ../database/index.js
+//uses ../database/index.js to connect to the mysql database
 
-var connection = require('../database/connect.js'
+var connection = require('../database/connect.js');
 
 module.exports = {
   ikea_products:{
+    //get request to get all product records in the database
     get: function(callback) {
       var queryStr = 'SELECT * FROM products';
-      connect.query(queryStr, (err, res) => {
+      connection.query(queryStr, (err, res) => {
         callback(err, res);
       });
     }
-  };
+  }
 };
