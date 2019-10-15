@@ -1,6 +1,8 @@
 //Database connection
 
 const mysql = require('mysql');
+const randProdList = require('mysql');
+
 
 //connection details
 var connection = mysql.createConnection({
@@ -17,5 +19,6 @@ connection.connect(function(err){
   }
   console.log('Ikea details Connected');
 });
+
 
 module.exports = connection;
