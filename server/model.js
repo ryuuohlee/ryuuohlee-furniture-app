@@ -5,9 +5,9 @@ var connection = require('../database/connect.js');
 module.exports = {
   ikea_products:{
     //get request to get all product records in the database
-    get: function(callback) {
-      var queryStr = 'SELECT * FROM products';
-      connection.query(queryStr, (err, res) => {
+    get: function(req, callback) {
+      var queryStr = 'SELECT * FROM products WHERE product_name is ?';
+      connection.query(queryStr, req.body.product_name, (err, res) => {
         callback(err, res);
       });
     }

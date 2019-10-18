@@ -24,3 +24,5 @@ app.get('/api/products', (req, res) => {
 
 //check if app is listening
 app.listen(port, () => {console.log(`listening on ${port}`)});
+
+module.exports.app = app;
