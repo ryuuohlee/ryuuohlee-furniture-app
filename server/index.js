@@ -7,10 +7,12 @@ var db = require('../database/connect.js');
 const controller = require('./controller.js');
 
 var app = express();
-var port = 9000; //lol if you get this we are  buds
+var port = 9000; //lol if you get this we are buds
 
 //Middleware
 app.use(bodyParser.json());
+app.use(express.static('client/distr'));
+
 
 app.get('/api/products', (req, res) => {
   controller.ikea_products.get(req, res, (err, data) => {
@@ -18,6 +20,8 @@ app.get('/api/products', (req, res) => {
       return console.log('error connecting to server');
     }
     console.log('ikea_products connected');
+    //console.log(data);
+
     res.send(data).status(200);
   });
 });

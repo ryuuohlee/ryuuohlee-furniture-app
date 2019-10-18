@@ -9,10 +9,12 @@
   },
   "scripts": {
     "start": "nodemon server/index.js",
-    "seed": "node database/seed.js"
+    "seed": "node database/seed.js",
+    "build": "webpack -d --watch"
   },
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
+    "babel": "^6.23.0",
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "lodash": "^4.17.15",
@@ -20,17 +22,21 @@
     "mysql": "^2.17.1",
     "mysql2": "^1.7.0",
     "randomstring": "^1.1.5",
-    "sequelize": "^5.19.6",
-    "webpack": "^4.41.2"
+    "sequelize": "^5.19.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
+    "babel-loader": "^8.0.6",
     "eslint": "^6.5.1",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "html-webpack-plugin": "^3.2.0",
     "nodemon": "^1.19.3",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9"
   }
 }
