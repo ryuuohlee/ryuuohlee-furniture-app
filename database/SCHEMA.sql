@@ -9,7 +9,7 @@ CREATE TABLE products (
   product_name VARCHAR(30) NOT NULL,
   product_short_desc VARCHAR(80) NOT NULL,
   product_ad_desc VARCHAR(200) NOT NULL,
-  product_price FLOAT(6,2) NOT NULL,
+  product_price FLOAT(6, 2) NOT NULL,
   product_color VARCHAR(30) NOT NULL,
   product_age VARCHAR(20) NOT NULL,
   product_avg_rev FLOAT(2, 1) NOT NULL

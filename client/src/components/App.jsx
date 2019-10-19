@@ -17,6 +17,7 @@ class App extends React.Component {
     this.randomProduct = this.randomProduct.bind(this);
   }
 
+  //selects a random product from the list of products to display
   randomProduct() {
     var random = Math.floor(Math.random() * Math.floor(this.state.productList.length));
     this.setState({

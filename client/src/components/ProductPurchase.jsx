@@ -3,7 +3,7 @@ import React from 'react'
 
 var ProductPurchase = (props) => (
   <div className='productPurchase'>
-    <form>
+    {/* <form>
       <label>Quantity</label>
       <div className='purchaseAmount'>
         <div className='quantityBox'>
@@ -22,7 +22,7 @@ var ProductPurchase = (props) => (
           <span>Add to shopping list</span>
         </span>
       </button>
-    </form>
+    </form> */}
   </div>
 );
 
