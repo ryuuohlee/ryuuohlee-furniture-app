@@ -14,11 +14,6 @@ var port = 9000; //lol if you get this we are buds
 app.use(bodyParser.json());
 app.use(express.static('client/dist'));
 
-//why was this needed when i didn't require something like this for cow list?
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '../client/dist/'), {});
-});
-
 app.get('/api/products', (req, res) => {
   controller.ikea_products.get(req, res, (err, data) => {
     if (err) {

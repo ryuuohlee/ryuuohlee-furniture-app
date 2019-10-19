@@ -17,7 +17,7 @@ var ProductRecord = function() {
   this.price = randomData.commerce.price();
   this.color = randomData.lorem.word();
   this.age = randomData.date.recent().toString().substring(0,10);
-  this.review = random(5);
+  this.review = random(6);
   this.data = [];
 };
 
