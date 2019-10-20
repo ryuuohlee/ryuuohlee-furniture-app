@@ -19,7 +19,8 @@ class ProductOptions extends React.Component {
 
   openModal() {
     this.setState({
-      modalIsOpen: true
+      modalIsOpen: true,
+      currentColor: this.props.Colors
     });
   }
 
@@ -41,7 +42,10 @@ class ProductOptions extends React.Component {
       <div className='productOptions'>
         <span>The price reflects selected options.</span>
         <span>
-          <button onClick={this.openModal}>Open Modal</button>
+          <button onClick={this.openModal}>
+            <span>Cover:</span>
+            <span>{this.props.Colors}</span>
+          </button>
           <Modal
             isOpen={this.state.modalIsOpen}
             onRequestClose={this.closeModal}
