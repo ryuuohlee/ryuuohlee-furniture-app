@@ -43,7 +43,7 @@ class App extends React.Component {
               <h2>{this.state.product.product_name}</h2>
               <span>{this.state.product.product_short_desc}</span>
             </p>
-          <h1 className='product_price'>{'$' + this.state.product.product_price + '.00'}</h1>
+          <h1 className='product_price'>{'$' + parseFloat(this.state.product.product_price).toFixed(2)}</h1>
           </div>
           <div className='aggregatedRating'>
             <a className='reviews' href='test'>
@@ -59,7 +59,7 @@ class App extends React.Component {
             <span className='adDesc'>{this.state.product.product_ad_desc}</span>
         </div>
         <div>
-          <ProductOptions />
+          <ProductOptions Colors={this.state.product.product_color}/>
         </div>
         <div>
           <ProductPurchase />

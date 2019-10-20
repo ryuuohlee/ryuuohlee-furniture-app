@@ -9,7 +9,7 @@ class ProductOptions extends React.Component {
     super(props);
 
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
     }
 
     this.openModal = this.openModal.bind(this);
@@ -36,6 +36,7 @@ class ProductOptions extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <div className='productOptions'>
         <span>The price reflects selected options.</span>
@@ -46,9 +47,8 @@ class ProductOptions extends React.Component {
             onRequestClose={this.closeModal}
             contentLabel='Product Options'
             >
-            <span>Hello</span>
+            <span>{this.props.Colors}</span>
             <button onClick={this.closeModal}>x</button>
-            <div>I am the options</div>
           </Modal>
         </span>
       </div>
