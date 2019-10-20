@@ -28,7 +28,7 @@ class App extends React.Component {
   componentDidMount() {
     fetch('api/products')
       .then(data => data.json())
-      .then(data => this.setState({productList: data}))
+      .then(data => this.setState({ productList: data }))
       .then(this.randomProduct);
   }
 
