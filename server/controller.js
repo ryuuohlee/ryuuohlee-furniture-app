@@ -5,7 +5,8 @@ const connection = require('../database/connect.js');
 module.exports = {
   ikea_products: {
     get: function(req, res) {
-      model.ikea_products.get(req, (err, results) => {
+      model.ikea_products.get((err, results) => {
+        //console.log(req);
         console.log('got response');
         res.json(results);
       })
