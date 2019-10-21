@@ -7,8 +7,8 @@ var db = require('./connect.js');
 var seedData = function(quantity) {
   //create an array of product list
 
-  var prodList = randProdList(100);
-  var queryStr = 'INSERT INTO products (product_category, product_name, product_short_desc, product_ad_desc, product_price, product_color, product_age, product_avg_rev) VALUES ?'
+  var prodList = randProdList(5);
+  var queryStr = 'INSERT INTO products (product_category, product_name, product_short_desc, product_ad_desc, product_price, product_color_image, product_color, product_age, product_avg_rev) VALUES ?'
   console.log(prodList);
   db.query(queryStr, [prodList], (error, results) => {
     if (error) {
@@ -19,4 +19,4 @@ var seedData = function(quantity) {
   })
 };
 
-seedData(100);
+seedData(5);

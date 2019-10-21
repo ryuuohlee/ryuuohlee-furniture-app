@@ -7,7 +7,7 @@ module.exports = {
     //get request to get all product records in the database
     get: function(callback) {
       var queryStr = 'SELECT * FROM products';
-      connection.query(queryStr,  (err, res) => {
+      connection.query(queryStr, (err, res) => {
         callback(err, res);
       });
     }
