@@ -14,26 +14,33 @@ class App extends React.Component {
       quantityValue: 1
     }
 
-    this.randomProduct = this.randomProduct.bind(this);
+    this.handleProduct = this.handleProduct.bind(this);
   }
 
   //selects a random product from the list of products to display
-  randomProduct() {
-    var random = Math.floor(Math.random() * Math.floor(this.state.productList.length));
-    this.setState({
-      product: this.state.productList[random]
-    });
+  handleProduct(e) {
+    var initial = 0;
+    if(e) {
+      this.setState({
+        product: this.state.productList[e.target.value]
+      });
+    } else {
+      this.setState({
+        product: this.state.productList[initial]
+      });
+    }
+
   }
 
   componentDidMount() {
     fetch('api/products')
       .then(data => data.json())
       .then(data => this.setState({productList: data}))
-      .then(this.randomProduct);
+      .then(this.handleProduct);
   }
 
   render() {
-    console.log(this.state.product);
+    console.log(this.state.productList);
     return (
       <div className='product_container'>
         <div className='product_price'>
@@ -59,7 +66,7 @@ class App extends React.Component {
             <span className='adDesc'>{this.state.product.product_ad_desc}</span>
         </div>
         <div>
-          <ProductOptions Colors={this.state.product.product_color}/>
+          <ProductOptions products={this.state.productList} handleProduct={this.handleProduct.bind(this)} product={this.state.product}/>
         </div>
         <div>
           <ProductPurchase />

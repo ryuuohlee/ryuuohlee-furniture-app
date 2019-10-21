@@ -10,25 +10,19 @@ class ProductOptions extends React.Component {
 
     this.state = {
       modalIsOpen: false,
-    }
+      productColor: this.props.product.product_color
+    };
 
     this.openModal = this.openModal.bind(this);
-
     this.closeModal = this.closeModal.bind(this);
   }
 
   openModal() {
     this.setState({
       modalIsOpen: true,
-      currentColor: this.props.Colors
+      currentColor: this.props
     });
   }
-
-  // afterOpenModal() {
-  //   this.setState({
-  //     modalIsOpen: true
-  //   });
-  // }
 
   closeModal(){
     this.setState({
@@ -37,21 +31,30 @@ class ProductOptions extends React.Component {
   }
 
   render() {
-    console.log(this.props)
+    console.log(this.props);
+    let options = this.props.products.map(color =>
+      <span className='productOption'>
+        <img src={color.product_color_image}/>
+        <span>{color.product_color}</span>
+      </span>
+      );
+
     return (
       <div className='productOptions'>
         <span>The price reflects selected options.</span>
         <span>
           <button onClick={this.openModal}>
             <span>Cover:</span>
-            <span>{this.props.Colors}</span>
+            <span>{this.state.productColor}</span>
           </button>
           <Modal
             isOpen={this.state.modalIsOpen}
             onRequestClose={this.closeModal}
             contentLabel='Product Options'
             >
-            <span>{this.props.Colors}</span>
+            <form>
+            {options}
+            </form>
             <button onClick={this.closeModal}>x</button>
           </Modal>
         </span>
