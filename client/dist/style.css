@@ -44,6 +44,13 @@ body {
 	font-family: 'Noto IKEA', 'Noto Sans', 'Roboto', 'Open Sans', sans-serif !important;
 }
 
+.product_container {
+	display: inline;
+	position: relative;
+	width: 25%;
+	margin: 25%;
+}
+
 .product_age {
 	margin: 0;
 	color: #fff;
@@ -55,6 +62,7 @@ body {
 	line-height: 1rem;
 	margin: 0 0 0.1rem;
 	font-weight: 700;
+	min-width: auto;
 }
 
 h1 {
@@ -62,12 +70,14 @@ h1 {
 	line-height: 1.1667;
 	letter-spacing: -0.84px;
 	margin: 0;
+	min-width: auto;
 }
 
 .product_name {
 	font-size: 1.25rem;
 	line-height: 2rem;
 	text-transform: uppercase;
+	min-width: auto;
 }
 
 .shortDesc {
@@ -75,6 +85,7 @@ h1 {
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.5rem;
+	min-width: auto;
 }
 
 .product_cost {
@@ -85,12 +96,14 @@ h1 {
 	line-height: 1;
 	letter-spacing: -1px;
 	white-space: nowrap;
+	min-width: auto;
 }
 
 .stars {
 	display: inline !important;
 	position: unset !important;
 	margin: 0% !important;
+	min-width: auto;
 }
 
 .icon {
@@ -106,11 +119,13 @@ h1 {
 	color: black;
 	font-size: 100%;
 	font-style: normal !important;
+	min-width: auto;
 }
 
 .options {
 	display: block;
 	width: 40%;
+	min-width: auto;
 }
 
 .dropSelector {
@@ -172,6 +187,7 @@ h1 {
 	margin: 10px;
 	border: 10px;
 	padding: 10px;
+	min-width: auto;
 }
 
 .choice {
@@ -183,4 +199,29 @@ h1 {
 .choiceName {
 	display: block;
 	text-align: center;
+}
+
+.purchaseAmount {
+	position: relative;
+	display: inline-flex;
+	right: 0px;
+}
+
+.quantityBox {
+	width: 9rem;
+	position: relative;
+}
+
+.amount {
+	text-align: center;
+	max-width: 75%;
+	padding: 0.6875rem 3rem;
+}
+
+.addCart {
+	display: block;
+}
+
+.addList {
+	display: block;
 }

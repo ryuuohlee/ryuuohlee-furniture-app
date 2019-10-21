@@ -25,9 +25,9 @@ class ProductPurchase extends React.Component {
           <label>Quantity</label>
           <div className='purchaseAmount'>
             <div className='quantityBox'>
-              <button className='minus' type='button' onClick={this.handleDecrease.bind(this)}>-</button>
-              <input value={this.state.value} min='1' max='999' />
-              <button className='add' type='button' onClick={this.handleIncrease.bind(this)}>+</button>
+              <button className='quantityChange' type='button' onClick={this.handleDecrease.bind(this)}>-</button>
+              <input className='amount' value={this.state.value} min='1' max='999' />
+              <button className='quantityChange' type='button' onClick={this.handleIncrease.bind(this)}>+</button>
             </div>
           </div>
           <button className='addCart' type='button'>

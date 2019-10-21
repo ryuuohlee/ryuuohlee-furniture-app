@@ -3,7 +3,7 @@ import React from 'react';
 import ProductOptions from './ProductOptions.jsx';
 import ProductPurchase from './ProductPurchase.jsx';
 import StockCheck from './StockCheck.jsx';
-import Rating from 'react-rating';
+import StarRatings from 'react-star-ratings';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,49 +15,58 @@ class App extends React.Component {
       quantityValue: 1
     }
 
-    this.randomProduct = this.randomProduct.bind(this);
+    this.handleProduct = this.handleProduct.bind(this);
   }
 
   //selects a random product from the list of products to display
-  randomProduct() {
-    var random = Math.floor(Math.random() * Math.floor(this.state.productList.length));
-    this.setState({
-      product: this.state.productList[random]
-    });
+  handleProduct(e) {
+    var initial = 2;
+    if (e) {
+      this.setState({
+        product: this.state.productList[e.target.value]
+      });
+    } else {
+      this.setState({
+        product: this.state.productList[initial]
+      });
+    }
   }
 
   componentDidMount() {
     fetch('api/products')
       .then(data => data.json())
       .then(data => this.setState({ productList: data }))
-      .then(this.randomProduct);
+      .then(this.handleProduct);
   }
 
   render() {
-    console.log(this.state.product);
+    console.log(this.state.productList);
+    const revStyle= {
+      textDecoration: 'none'
+    }
     return (
       <div className='product_container'>
         <div className='product_price'>
-          <p className='product_age'>product age</p>
-          <div className='product_heading'>
-            <p className="product_name">
-              <h2>{this.state.product.product_name}</h2>
-              <span>{this.state.product.product_short_desc}</span>
-            </p>
-            <h1 className='product_price'>{'$' + parseFloat(this.state.product.product_price).toFixed(2)}</h1>
-          </div>
+          <p className='product_age'>New</p>
+          <h1 className='product_heading'>
+            <span className='product_name'>{this.state.product.product_name}</span>
+            <span className='shortDesc'>{this.state.product.product_short_desc}</span>
+          </h1>
+          <p className='product_cost'>{'$' + parseFloat(this.state.product.product_price).toFixed(2)}</p>
           <div className='aggregatedRating'>
-            <a className='reviews' href='test'>
+            <a style={revStyle} className='reviews' href='test'>
               <span className='stars'>
-                <Rating
-                  emptySymbol={<img src="https://fec-piccolo.s3-us-west-1.amazonaws.com/star-grey.png" className="icon" />}
-                  fullSymbol={<img src="https://fec-piccolo.s3-us-west-1.amazonaws.com/star-yellow.png" className="icon" />}
-                  initialRating={this.state.product.product_avg_rev}
-                  readonly
+                <StarRatings
+                  rating={this.state.product.product_avg_rev}
+                  starRatedColor="gold"
+                  numberOfStars={5}
+                  starDimension='25px'
+                  starSpacing="0px"
+                  name='rating'
                 />
               </span>
               <span className="reviewValue">
-                <span>{this.state.product.product_avg_rev}</span>
+                {this.state.product.product_avg_rev}
               </span>
               <span className="numberOfRev">138 Reviews</span>
             </a>
@@ -67,7 +76,7 @@ class App extends React.Component {
           <span className='adDesc'>{this.state.product.product_ad_desc}</span>
         </div>
         <div>
-          <ProductOptions Colors={this.state.product.product_color} />
+          <ProductOptions products={this.state.productList} handleProduct={this.handleProduct.bind(this)} product={this.state.product} />
         </div>
         <div>
           <ProductPurchase />
