@@ -52,10 +52,11 @@ class ProductOptions extends React.Component {
             onRequestClose={this.closeModal}
             contentLabel='Product Options'
             >
+            <h1>Choose Cover</h1>
+            <button onClick={this.closeModal}>x</button>
             <form>
             {options}
             </form>
-            <button onClick={this.closeModal}>x</button>
           </Modal>
         </span>
       </div>
