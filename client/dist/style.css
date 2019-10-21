@@ -102,8 +102,85 @@ h1 {
 }
 
 .reviewValue {
-	padding: .33333rem;
+	padding: 0.33333rem;
 	color: black;
 	font-size: 100%;
 	font-style: normal !important;
+}
+
+.options {
+	display: block;
+	width: 40%;
+}
+
+.dropSelector {
+	display: block;
+	width: 100%;
+	font-size: 1rem;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+	background-color: #fff;
+	color: #111;
+	text-align: left;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+.dropSelector:focus {
+	outline: none;
+}
+
+.colorOption {
+	display: block;
+	font-size: 125%;
+}
+
+.cover {
+	color: gray;
+	font-size: 75%;
+}
+
+.dropDown {
+	display: inline;
+	position: absolute;
+	right: 0px;
+	padding: 10px;
+}
+
+.modalTitle {
+	padding: 0;
+	margin: 0;
+	padding: 2rem;
+	text-align: center;
+}
+
+.exit {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	z-index: 6;
+	border: transparent;
+	background-color: transparent;
+}
+
+.exit:focus {
+	outline: none;
+}
+
+.productOption {
+	display: inline-block;
+	margin: 10px;
+	border: 10px;
+	padding: 10px;
+}
+
+.choice {
+	display: block;
+	height: 85%;
+	width: 85%;
+}
+
+.choiceName {
+	display: block;
+	text-align: center;
 }

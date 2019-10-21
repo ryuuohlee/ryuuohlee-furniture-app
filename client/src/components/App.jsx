@@ -47,7 +47,7 @@ class App extends React.Component {
     return (
       <div className='product_container'>
         <div className='product_price'>
-          <p className='product_age'>product age</p>
+          <p className='product_age'>New</p>
           <h1 className='product_heading'>
             <span className='product_name'>{this.state.product.product_name}</span>
             <span className='shortDesc'>{this.state.product.product_short_desc}</span>
