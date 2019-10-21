@@ -3,14 +3,15 @@ import React from 'react';
 import ProductOptions from './ProductOptions.jsx';
 import ProductPurchase from './ProductPurchase.jsx';
 import StockCheck from './StockCheck.jsx';
+import Rating from 'react-rating';
 
 class App extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      productList:[],
-      product:{},
+      productList: [],
+      product: {},
       quantityValue: 1
     }
 
@@ -28,7 +29,7 @@ class App extends React.Component {
   componentDidMount() {
     fetch('api/products')
       .then(data => data.json())
-      .then(data => this.setState({productList: data}))
+      .then(data => this.setState({ productList: data }))
       .then(this.randomProduct);
   }
 
@@ -43,11 +44,18 @@ class App extends React.Component {
               <h2>{this.state.product.product_name}</h2>
               <span>{this.state.product.product_short_desc}</span>
             </p>
-          <h1 className='product_price'>{'$' + parseFloat(this.state.product.product_price).toFixed(2)}</h1>
+            <h1 className='product_price'>{'$' + parseFloat(this.state.product.product_price).toFixed(2)}</h1>
           </div>
           <div className='aggregatedRating'>
             <a className='reviews' href='test'>
-              <span className='stars'></span>
+              <span className='stars'>
+                <Rating
+                  emptySymbol={<img src="https://fec-piccolo.s3-us-west-1.amazonaws.com/star-grey.png" className="icon" />}
+                  fullSymbol={<img src="https://fec-piccolo.s3-us-west-1.amazonaws.com/star-yellow.png" className="icon" />}
+                  initialRating={this.state.product.product_avg_rev}
+                  readonly
+                />
+              </span>
               <span className="reviewValue">
                 <span>{this.state.product.product_avg_rev}</span>
               </span>
@@ -56,10 +64,10 @@ class App extends React.Component {
           </div>
         </div>
         <div className='product_ad_desc'>
-            <span className='adDesc'>{this.state.product.product_ad_desc}</span>
+          <span className='adDesc'>{this.state.product.product_ad_desc}</span>
         </div>
         <div>
-          <ProductOptions Colors={this.state.product.product_color}/>
+          <ProductOptions Colors={this.state.product.product_color} />
         </div>
         <div>
           <ProductPurchase />

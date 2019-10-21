@@ -23,6 +23,7 @@
     "mysql2": "^1.7.0",
     "randomstring": "^1.1.5",
     "react-modal": "^3.10.1",
+    "react-rating": "^2.0.0",
     "sequelize": "^5.19.6"
   },
   "devDependencies": {
