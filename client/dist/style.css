@@ -44,6 +44,9 @@ body {
 	font-family: 'Noto IKEA', 'Noto Sans', 'Roboto', 'Open Sans', sans-serif !important;
 }
 
+form{
+}
+
 .product_container {
 	display: inline;
 	position: relative;
@@ -208,14 +211,21 @@ h1 {
 }
 
 .quantityBox {
+	position: fixed;
 	width: 9rem;
-	position: relative;
+	right: 0px;
 }
 
 .amount {
 	text-align: center;
-	width: 100%;
-	padding: 0.6875rem 3rem;
+	height:100%;
+	width: 50%;
+	padding: 0;
+	display: inline-block;
+}
+
+.quantityChange {
+	display: inline-block;
 }
 
 .addCart {
