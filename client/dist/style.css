@@ -112,7 +112,7 @@ h1 {
 .icon {
 	height: 25%;
 	width: 25%;
-	display: inline !important;
+	display: inline;
 	position: unset !important;
 	margin: 0% !important;
 }
@@ -213,7 +213,6 @@ h1 {
 .quantityBox {
 	position: fixed;
 	width: 9rem;
-	right: 0px;
 }
 
 .amount {
