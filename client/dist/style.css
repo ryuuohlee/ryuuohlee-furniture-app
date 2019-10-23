@@ -263,3 +263,16 @@ h1 {
 	margin-bottom: 1rem;
 	outline: none;
 }
+
+.bunny {
+	height: 3%;
+	width: 3%;
+}
+
+.info {
+	color: #0058a3;
+}
+
+.checkStore {
+	border-top: 1px solid gray;
+}
