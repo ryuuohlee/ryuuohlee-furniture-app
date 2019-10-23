@@ -15,10 +15,10 @@ app.use(express.static('client/dist'));
 app.get('/api/products', (req, res) => {
   controller.ikea_products.get(req, res, (err, data) => {
     if (err) {
-      return console.log('error connecting to server');
+      console.log('error connecting to server');
+      return;
     }
     console.log('ikea_products connected');
-    // console.log(data);
     res.send(data).status(200);
   });
 });

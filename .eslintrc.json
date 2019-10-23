@@ -26,6 +26,7 @@
     ],
     "rules": {
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "import/extensions": ["error", "never", { "jsx": "always" }]
+        "import/extensions": ["error", "never", { "jsx": "always" }],
+        "react/destructuring-assignment": [2, "never"]
     }
 }

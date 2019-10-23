@@ -29,13 +29,13 @@ class App extends React.Component {
   handleProduct(e) {
     const initial = 2;
     if (e) {
-      this.setState({
-        product: this.state.productList[e.target.value],
-      });
+      this.setState((prevState) => ({
+        product: prevState.productList[e.target.value],
+      }));
     } else {
-      this.setState({
-        product: this.state.productList[initial],
-      });
+      this.setState((prevState) => ({
+        product: prevState.productList[initial],
+      }));
     }
   }
 
@@ -52,7 +52,7 @@ class App extends React.Component {
             <span className="product_name">{this.state.product.product_name}</span>
             <span className="shortDesc">{this.state.product.product_short_desc}</span>
           </h1>
-          <p className="product_cost">{`$${  parseFloat(this.state.product.product_price).toFixed(2)}`}</p>
+          <p className="product_cost">{`$${parseFloat(this.state.product.product_price).toFixed(2)}`}</p>
           <div className="aggregatedRating">
             <a style={revStyle} className="reviews" href="test">
               <span className="stars">
@@ -76,8 +76,10 @@ class App extends React.Component {
           <span className="adDesc">{this.state.product.product_ad_desc}</span>
         </div>
         <div>
-          <ProductOptions products={this.state.productList} handleProduct={this.handleProduct}
-          product={this.state.product}
+          <ProductOptions
+            products={this.state.productList}
+            handleProduct={this.handleProduct}
+            product={this.state.product}
           />
         </div>
         <div>
