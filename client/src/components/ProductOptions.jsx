@@ -44,7 +44,7 @@ class ProductOptions extends React.Component {
         <span className="options">
           <button type="submit" className="dropSelector" onClick={this.openModal}>
             <span className="cover">Cover:</span>
-            <img className="dropDown" src="https://fec-piccolo.s3-us-west-1.amazonaws.com/keyboard_arrow_down-24px.svg" />
+            <img className="dropDown" src="https://fec-piccolo.s3-us-west-1.amazonaws.com/keyboard_arrow_down-24px.svg" alt="down" />
             <span className="colorOption">{this.state.productColor}</span>
           </button>
           <Modal
