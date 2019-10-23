@@ -64,28 +64,28 @@ class App extends React.Component {
                   starSpacing="0px"
                   name="rating"
                 />
+                <span className="reviewValue">
+                  {this.state.product.product_avg_rev}
+                </span>
+                <span className="numberOfRev">138 Reviews</span>
               </span>
-              <span className="reviewValue">
-                {this.state.product.product_avg_rev}
-              </span>
-              <span className="numberOfRev">138 Reviews</span>
             </a>
           </div>
         </div>
         <div className="product_ad_desc">
           <span className="adDesc">{this.state.product.product_ad_desc}</span>
         </div>
-        <div>
+        <div className="productOptions">
           <ProductOptions
             products={this.state.productList}
             handleProduct={this.handleProduct}
             product={this.state.product}
           />
         </div>
-        <div>
+        <div className="productPurchase">
           <ProductPurchase />
         </div>
-        <div>
+        <div className="stockCheck">
           <StockCheck />
         </div>
       </div>

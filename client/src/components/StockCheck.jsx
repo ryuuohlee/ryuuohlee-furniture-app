@@ -8,7 +8,7 @@ import {
   AccordionItemButton,
 } from 'react-accessible-accordion';
 
-const StockCheck = (props) => (
+const StockCheck = () => (
   <div className="stockCheck">
     <div>
       <img className="bunny" src="https://fec-piccolo.s3-us-west-1.amazonaws.com/task+rabbit.svg" alt="assembly" />
