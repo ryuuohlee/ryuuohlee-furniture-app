@@ -1,5 +1,5 @@
 //requirements
-import React from 'react'
+import React from 'react';
 
 class ProductPurchase extends React.Component {
   constructor(props) {
