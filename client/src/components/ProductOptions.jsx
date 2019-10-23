@@ -10,7 +10,7 @@ class ProductOptions extends React.Component {
 
     this.state = {
       modalIsOpen: false,
-      productColor: this.props.product.product_color,
+      productColor: this.props.products.product_color,
     };
 
     this.openModal = this.openModal.bind(this);
@@ -33,7 +33,8 @@ class ProductOptions extends React.Component {
     console.log(this.props);
     const options = this.props.products.map((color) => (
       <span className="productOption">
-        <input type="image" src={color.product_color_image} aria-label={color.product_color} />
+        <input type="productImage" src={color.product_color_image} aria-label={color.product_color} />
+        <label className="productLabel">{color.product_color}</label>
       </span>
 
     ));
@@ -51,6 +52,7 @@ class ProductOptions extends React.Component {
             isOpen={this.state.modalIsOpen}
             onRequestClose={this.closeModal}
             contentLabel="Product Options"
+            id="ReactModalPortal"
             style={{
               overlay: {
                 backgroundColor: 'grey',
