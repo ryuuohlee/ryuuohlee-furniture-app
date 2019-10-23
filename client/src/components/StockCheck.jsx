@@ -28,7 +28,7 @@ const StockCheck = () => (
             </AccordionItemButton>
           </AccordionItemHeading>
           <AccordionItemPanel>
-            <span>Add to cart for delivery details.</span>
+            Add to cart for delivery details.
           </AccordionItemPanel>
         </AccordionItem>
       </Accordion>
