@@ -1,16 +1,14 @@
 // server that connects client and database
 
-//requirements
+// requirements
 const express = require('express');
 const bodyParser = require('body-parser');
-var db = require('../database/connect.js');
 const controller = require('./controller.js');
-const path = require('path');
 
-var app = express();
-var port = 9000; //lol if you get this we are buds
+const app = express();
+const port = 9000; // lol if you get this we are buds
 
-//Middleware
+// Middleware
 app.use(bodyParser.json());
 app.use(express.static('client/dist'));
 
@@ -20,13 +18,12 @@ app.get('/api/products', (req, res) => {
       return console.log('error connecting to server');
     }
     console.log('ikea_products connected');
-    //console.log(data);
-
+    // console.log(data);
     res.send(data).status(200);
   });
 });
 
-//check if app is listening
-app.listen(port, () => {console.log(`listening on ${port}`)});
+// check if app is listening
+app.listen(port, () => { console.log(`listening on ${port}`); });
 
 module.exports.app = app;

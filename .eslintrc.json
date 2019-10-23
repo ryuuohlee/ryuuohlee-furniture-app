@@ -1,14 +1,18 @@
 {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "node": true
     },
     "extends": [
-        "airbnb", "react-app"
+        "airbnb",
+        "eslint:recommended",
+        "plugin:react/recommended"
     ],
     "globals": {
         "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
+        "SharedArrayBuffer": "readonly",
+        "Window": "readonly"
     },
     "parserOptions": {
         "ecmaFeatures": {
