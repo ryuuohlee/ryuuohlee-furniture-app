@@ -166,7 +166,7 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 #ReactModalPortal {
-	position: relative !important;
+	position: relative;
 	display: block !important;
 	top: 0px;
   left: 0px;
@@ -310,18 +310,31 @@ input[type='number']::-webkit-outer-spin-button {
 	display: inline-block;
 	position: relative;
 	left: -5px;
+	height: 10%;
+	width: 10%;
 }
 
 .jeff-shopText{
 	display: inline-block;
 	position: relative;
-	top: -8px;
+	top: -5px;
 	left: -5px;
+}
+
+.jeff-shoppingList {
+	display: inline-block;
+	position: relative;
+	top: 3px;
+	left: -5px;
+	height: 8%;
+	width: 8%;
 }
 
 .addList {
 	display: flexbox;
 	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	border: 0;
 	background-color: #f5f5f5;
 	color: #111;
@@ -355,6 +368,10 @@ input[type='number']::-webkit-outer-spin-button {
 	width: 10%;
 }
 
+.jeff-assembly:hover {
+	background-color: #f5f5f5;
+}
+
 .jeff-deliveryInfo {
 	display: inline-flex;
 	position: relative;
@@ -368,6 +385,10 @@ input[type='number']::-webkit-outer-spin-button {
 	display: inline-flex;
 	position: relative;
 	bottom: -8px;
+}
+
+.jeff-deliveryInfo:hover {
+	background-color: #f5f5f5;
 }
 
 .jeff-deliveryDetail {
@@ -384,6 +405,10 @@ input[type='number']::-webkit-outer-spin-button {
 	border-top: 1px solid gray;
 	padding-top: 10px;
 	width: 100%;
+}
+
+.jeff-checkStore:hover {
+	background-color: #f5f5f5;
 }
 
 .jeff-csText {

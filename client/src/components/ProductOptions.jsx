@@ -65,11 +65,12 @@ class ProductOptions extends React.Component {
             id="ReactModalPortal"
             style={{
               overlay: {
-                position: 'fixed',
+                position: 'absolute',
                 top: '0px',
                 left: '0px',
                 right: '0px',
                 bottom: '0px',
+
                 backgroundColor: 'lightgray',
               },
               content: {
@@ -78,6 +79,8 @@ class ProductOptions extends React.Component {
                 left: '40px',
                 right: '40px',
                 bottom: '40px',
+                minHeight: '80px',
+                minWidth: '80px',
                 border: '1px solid #ccc',
                 background: '#fff',
                 overflow: 'auto',

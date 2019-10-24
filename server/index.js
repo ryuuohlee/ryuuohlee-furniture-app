@@ -3,12 +3,14 @@
 // requirements
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const controller = require('./controller.js');
 
 const app = express();
 const port = 9000; // lol if you get this we are buds
 
 // Middleware
+app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('client/dist'));
 
