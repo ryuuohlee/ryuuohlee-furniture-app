@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 // requirements
 import React from 'react';
 import Modal from 'react-modal';
@@ -10,11 +11,17 @@ class ProductOptions extends React.Component {
 
     this.state = {
       modalIsOpen: false,
-      productColor: this.props.products.product_color,
+      productColor: '',
     };
 
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({
+      productColor: this.props.product.product_color,
+    });
   }
 
   openModal() {
@@ -29,11 +36,14 @@ class ProductOptions extends React.Component {
     });
   }
 
+
   render() {
     console.log(this.props);
+    // eslint-disable-next-line react/prop-types
     const options = this.props.products.map((color) => (
+      // eslint-disable-next-line react/jsx-key
       <span className="productOption">
-        <input type="productImage" src={color.product_color_image} aria-label={color.product_color} />
+        <input type="image" src={color.product_color_image} aria-label={color.product_color} className="productImage" />
         <label className="productLabel">{color.product_color}</label>
       </span>
 
@@ -51,13 +61,18 @@ class ProductOptions extends React.Component {
           <Modal
             isOpen={this.state.modalIsOpen}
             onRequestClose={this.closeModal}
+            shouldCloseOnOverlayClick
             contentLabel="Product Options"
             id="ReactModalPortal"
             style={{
               overlay: {
-                backgroundColor: 'grey',
-                'min-height': 'auto',
-                'min-width': 'auto',
+                backgroundColor: 'gray',
+                minHeight: 'auto',
+                minWidth: 'auto',
+              },
+              content: {
+                backgroundColor: 'white',
+
               },
             }}
           >

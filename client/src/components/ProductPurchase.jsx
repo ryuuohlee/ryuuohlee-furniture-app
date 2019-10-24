@@ -7,19 +7,19 @@ class ProductPurchase extends React.Component {
     super(props);
 
     this.state = {
-      value: 1,
+      quantity: 1,
     };
   }
 
   handleIncrease() {
-    this.setState((prevState) => ({ value: prevState.value + 1 }));
+    this.setState((prevState) => ({ quantity: prevState.quantity + 1 }));
   }
 
   handleDecrease() {
-    if (this.state.value === 0) {
-      this.setState((prevState) => ({ value: prevState.value }));
+    if (this.state.quantity === 0) {
+      this.setState((prevState) => ({ quantity: prevState.quantity }));
     } else {
-      this.setState((prevState) => ({ value: prevState.value - 1 }));
+      this.setState((prevState) => ({ quantity: prevState.quantity - 1 }));
     }
 
   }
@@ -34,7 +34,7 @@ class ProductPurchase extends React.Component {
               <button className="quantityChange" id="minus" type="button" onClick={this.handleDecrease.bind(this)}>
                 <img src="https://fec-piccolo.s3-us-west-1.amazonaws.com/remove-24px.svg" alt="minus" />
               </button>
-              <input type="number" className="amount" min="1" max="999" value={this.state.value} />
+              <input type="number" className="amount" min="1" max="999" defaultValue={this.state.quantity} />
               <button className="quantityChange" type="button" onClick={this.handleIncrease.bind(this)}>
                 <img src="https://fec-piccolo.s3-us-west-1.amazonaws.com/add-24px+(1).svg" alt="add" />
               </button>

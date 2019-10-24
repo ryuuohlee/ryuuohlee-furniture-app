@@ -50,28 +50,28 @@ input[type='number']::-webkit-outer-spin-button {
 	margin: 0;
 }
 
-h1 {
+.jeff_product_heading_display {
 	font-size: 3rem;
-	line-height: 1.1667;
+	line-height: 0px;
 	letter-spacing: -0.84px;
-	margin: 0;
+	margin: 0px;
 }
 
-div {
-	width: 20rem;
+.product_details {
+	width: auto;
+	white-space: nowrap;
 }
 
 #ReactModalPortal {
 	position: absolute !important;
 	display: block !important;
-	width: 80rem !important;
+	width: 100% !important;
 }
 
-
-.product_container {
-	display: inline;
-	margin: 25%;
-	margin-bottom: 1rem;
+form {
+	display: inline-block;
+	width: auto;
+	white-space: wrap;
 }
 
 .product_age {
@@ -102,7 +102,7 @@ div {
 }
 
 .product_cost {
-	margin: 0;
+	margin: 5px;
 	display: block;
 	font-weight: 700;
 	font-size: 2rem;
@@ -113,6 +113,7 @@ div {
 
 .aggregatedRating {
 	display: inline-block;
+	margin: 5px;
 }
 
 .reviews {
