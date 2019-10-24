@@ -46,7 +46,6 @@ class ProductOptions extends React.Component {
         <input type="image" src={color.product_color_image} aria-label={color.product_color} className="productImage" />
         <label className="productLabel">{color.product_color}</label>
       </span>
-
     ));
 
     return (
