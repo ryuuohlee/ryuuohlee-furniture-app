@@ -333,16 +333,66 @@ input[type='number']::-webkit-outer-spin-button {
 	outline: none;
 }
 
+.jeff-assembly {
+	display: inline-flex;
+	position: relative;
+	width: 100%;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	outline: none;
+}
+
+.jeff-assemblyLink {
+	display: inline-flex;
+	position: relative;
+	bottom: -5px;
+	outline: none;
+}
+
 .bunny {
+	display: inline-flex;
 	height: 10%;
 	width: 10%;
+}
+
+.jeff-deliveryInfo {
+	display: inline-flex;
+	position: relative;
+	width: 100%;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	outline: none;
+}
+
+.jeff-deliveryText {
+	display: inline-flex;
+	position: relative;
+	bottom: -8px;
+}
+
+.jeff-deliveryDetail {
+	padding: .5rem;
 }
 
 .info {
 	color: #0058a3;
 }
 
-.checkStore {
+.jeff-checkStore {
+	display: inline-flex;
+	position: relative;
 	border-top: 1px solid gray;
+	padding-top: 10px;
+	width: 100%;
 }
+
+.jeff-csText {
+	display: inline-flex;
+	position: relative;
+	bottom: -8px;
+}
+
+/* .accordion__button:hover {
+	background-color: #ddd;
+} */
 

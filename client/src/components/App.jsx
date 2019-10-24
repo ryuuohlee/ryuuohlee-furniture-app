@@ -6,7 +6,7 @@ import ProductPurchase from './ProductPurchase.jsx';
 import StockCheck from './StockCheck.jsx';
 
 
-class App extends React.Component {
+class ProductDetails extends React.Component {
   constructor(props) {
     super(props);
 
@@ -83,12 +83,10 @@ class App extends React.Component {
           />
         </div>
         <ProductPurchase />
-        <div className="stockCheck">
-          <StockCheck />
-        </div>
+        <StockCheck />
       </div>
     );
   }
 }
 
-export default App;
+export default ProductDetails;
