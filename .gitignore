@@ -1,1 +1,5 @@
+# ignored folder
 node_modules
+
+# ignored file
+client/dist/bundle.js
