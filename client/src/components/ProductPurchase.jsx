@@ -50,7 +50,7 @@ class ProductPurchase extends React.Component {
           </button>
           <button className="addList" type="button">
             <span>
-              <img className="jeff-shoppingBag" src="https://fec-piccolo.s3-us-west-1.amazonaws.com/shopping+list.png" alt="shoppingBag" />
+              <img className="jeff-shoppingList" src="https://fec-piccolo.s3-us-west-1.amazonaws.com/shopping+list.png" alt="shoppingBag" />
               <span className="jeff-shopText">Add to shopping list</span>
             </span>
           </button>
