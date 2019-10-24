@@ -50,6 +50,10 @@ input[type='number']::-webkit-outer-spin-button {
 	margin: 0;
 }
 
+.jeff_product_details {
+	width: 30% !important;
+}
+
 .jeff_product_heading_display {
 	font-size: 3rem;
 	line-height: 0px;
@@ -57,24 +61,7 @@ input[type='number']::-webkit-outer-spin-button {
 	margin: 0px;
 }
 
-.product_details {
-	width: auto;
-	white-space: nowrap;
-}
-
-#ReactModalPortal {
-	position: absolute !important;
-	display: block !important;
-	width: 100% !important;
-}
-
-form {
-	display: inline-block;
-	width: auto;
-	white-space: wrap;
-}
-
-.product_age {
+.jeff_product_age {
 	margin: 0;
 	color: #fff;
 	background: #ca5007;
@@ -87,21 +74,20 @@ form {
 	font-weight: 700;
 }
 
-
-.product_name {
+.jeff-product_name {
 	font-size: 1.25rem;
 	line-height: 2rem;
 	text-transform: uppercase;
 }
 
-.shortDesc {
+.jeff-shortDesc {
 	display: block;
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.5rem;
 }
 
-.product_cost {
+.jeff-product_cost {
 	margin: 5px;
 	display: block;
 	font-weight: 700;
@@ -111,16 +97,12 @@ form {
 	white-space: nowrap;
 }
 
-.aggregatedRating {
+.jeff-aggregatedRating {
 	display: inline-block;
-	margin: 5px;
+	margin-top: 10px;
 }
 
-.reviews {
-	display: inline-block;
-}
-
-.stars {
+.jeff-stars {
 	display: inline-block;
 	white-space: pre;
 }
@@ -134,7 +116,7 @@ form {
 	white-space: nowrap !important;
 }
 
-.reviewValue {
+.jeff-reviewValue {
 	display: inline-block;
 	padding: 0.33333rem;
 	color: black;
@@ -142,12 +124,24 @@ form {
 	font-style: normal !important;
 }
 
-.options {
-	display: block;
+.jeff-product_ad_desc {
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
-.dropSelector {
-	display: block;
+.jeff-productOptions {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.jeff-productCaption {
+	font-weight: 650;
+}
+
+#jeff-dropSelector {
+	display: inline-block;
+	overflow: visible;
+	min-height: fit-content;
 	width: 100%;
 	font-size: 1rem;
 	position: relative;
@@ -157,23 +151,43 @@ form {
 	text-align: left;
 	border: 1px solid #ccc;
 	border-radius: 2px;
+
 }
 
-
-.dropSelector:focus {
+.jeff-dropSelector:focus {
 	outline: none;
 }
 
+.jeff-cover {
+	color: gray;
+	font-size: 75%;
+	margin-top: 10px;
 
+}
+
+#ReactModalPortal {
+	position: relative !important;
+	display: block !important;
+	top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+#jeff-productForm {
+	position: strict;
+	min-width: auto;
+}
+
+.jeff-productImage {
+	width: auto;
+	height: auto;
+	padding: 1.5rem;
+}
 
 .colorOption {
 	display: block;
 	font-size: 125%;
-}
-
-.cover {
-	color: gray;
-	font-size: 75%;
 }
 
 .dropDown {
@@ -203,13 +217,6 @@ form {
 	outline: none;
 }
 
-.productOption {
-	display: inline-block;
-	margin: 10px;
-	border: 10px;
-	padding: 10px;
-}
-
 .choice {
 	display: block;
 	height: 85%;
@@ -221,39 +228,72 @@ form {
 	text-align: center;
 }
 
-.purchaseAmount {
-	position: static;
-	right: 0px;
-	display: block;
+/* quantity section */
+.jeff-productPurchase {
+	display: flex;
+	justify-content: space-between;
+	overflow: auto;
 }
 
-.quantityBox {
-	position: static;
-	display: inline-block;
-	right: 0px;
-	width: 9rem;
+.jeff-quantityForm {
+	width: 100%;
 }
 
-.amount {
+.jeff-quantitySpace {
+	display: inline-flex;
+	justify-content: space-between;
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.jeff-quantityAlign {
+	display: inline-flex;
+	justify-content: space-between;
+	width: 100%;
+	vertical-align: middle;
+}
+
+.jeff-quantity {
+	position: relative;
+	top: 15px;
+}
+
+.jeff-quantityControls {
+	display: inline-flex;
+	justify-content: flex-end center;
+	right: 0px;
+	height: 45px;
+	border: 1px lightslategray solid;
+	border-radius: 2px;
+}
+
+.jeff-amount {
 	text-align: center;
 	font-size: 0.875rem;
 	line-height: 1.7143;
 	height: 100%;
-	width: 50%;
+	width: 3rem;
 	padding: 0;
-	display: inline-block;
+	display: inline-flex;
+	border: 0px;
+	outline: none;
 }
 
-.quantityChange {
+.jeff-quantityChange {
 	display: inline-block;
-	border: 0;
+	border: 0px;
 	background-color: transparent;
 	text-align: center;
+	outline: none;
 }
 
-.addCart {
-	display: block;
+.jeff-addCart {
+	display: inline !important;
+	width: 100%;
 	border: 0;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	background-color: #0058a3;
 	color: white;
 	font-family: inherit;
@@ -262,10 +302,26 @@ form {
 	text-align: center;
 	margin-bottom: 1rem;
 	outline: none;
+	vertical-align: middle;
+	-webkit-box-pack: center;
+}
+
+.jeff-shoppingBag {
+	display: inline-block;
+	position: relative;
+	left: -5px;
+}
+
+.jeff-shopText{
+	display: inline-block;
+	position: relative;
+	top: -8px;
+	left: -5px;
 }
 
 .addList {
-	display: block;
+	display: flexbox;
+	width: 100%;
 	border: 0;
 	background-color: #f5f5f5;
 	color: #111;

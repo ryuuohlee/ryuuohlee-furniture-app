@@ -43,17 +43,17 @@ class ProductOptions extends React.Component {
     const options = this.props.products.map((color) => (
       // eslint-disable-next-line react/jsx-key
       <span className="productOption">
-        <input type="image" src={color.product_color_image} aria-label={color.product_color} className="productImage" />
+        <input type="image" src={color.product_color_image} aria-label={color.product_color} className="jeff-productImage" />
         <label className="productLabel">{color.product_color}</label>
       </span>
     ));
 
     return (
-      <div className="productOptions">
-        <span>The price reflects selected options.</span>
+      <div className="jeff-productOptions">
+        <span className="jeff-productCaption">The price reflects selected options.</span>
         <span className="options">
-          <button type="submit" className="dropSelector" onClick={this.openModal}>
-            <span className="cover">Cover:</span>
+          <button type="button" id="jeff-dropSelector" onClick={this.openModal}>
+            <span className="jeff-cover">Cover:</span>
             <img className="dropDown" src="https://fec-piccolo.s3-us-west-1.amazonaws.com/keyboard_arrow_down-24px.svg" alt="down" />
             <span className="colorOption">{this.state.productColor}</span>
           </button>
@@ -65,13 +65,23 @@ class ProductOptions extends React.Component {
             id="ReactModalPortal"
             style={{
               overlay: {
-                backgroundColor: 'gray',
-                minHeight: 'auto',
-                minWidth: 'auto',
+                position: 'fixed',
+                top: '0px',
+                left: '0px',
+                right: '0px',
+                bottom: '0px',
+                backgroundColor: 'lightgray',
               },
               content: {
+                position: 'absolute',
+                top: '40px',
+                left: '40px',
+                right: '40px',
+                bottom: '40px',
+                border: '1px solid #ccc',
+                background: '#fff',
+                overflow: 'auto',
                 backgroundColor: 'white',
-
               },
             }}
           >
@@ -80,7 +90,7 @@ class ProductOptions extends React.Component {
               <button type="submit" className="exit" onClick={this.closeModal} label="close"><img className="x" src="https://fec-piccolo.s3-us-west-1.amazonaws.com/clear-24px.svg" alt="" /></button>
             </span>
 
-            <form>
+            <form id="jeff-productForm">
               {options}
             </form>
           </Modal>
