@@ -5,13 +5,13 @@ import ProductOptions from './ProductOptions.jsx';
 import ProductPurchase from './ProductPurchase.jsx';
 import StockCheck from './StockCheck.jsx';
 
-
-class App extends React.Component {
+class ItemDescription extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       productList: [],
+      productOptions: [],
       product: {},
     };
 
@@ -37,25 +37,32 @@ class App extends React.Component {
         product: prevState.productList[initial],
       }));
     }
+    let productChoices = [];
+    for (var i = 0; i < this.state.productList.length; i++) {
+      if (this.state.productList[i].product_name === this.state.product.product_name) {
+        productChoices.push(this.state.productList[i]);
+      }
+    }
+    this.setState({ productOptions: productChoices });
   }
 
   render() {
-    console.log(this.state.productList);
+    console.log(this.state.productOptions);
     const revStyle = {
       textDecoration: 'none',
     };
     return (
-      <div className="product_container">
+      <div className="jeff_product_details">
         <div className="product_price">
-          <p className="product_age">New</p>
-          <h1 className="product_heading">
-            <span className="product_name">{this.state.product.product_name}</span>
-            <span className="shortDesc">{this.state.product.product_short_desc}</span>
+          <p className="jeff_product_age">New</p>
+          <h1 className="jeff_product_heading_display">
+            <span className="jeff-product_name">{this.state.product.product_name}</span>
+            <span className="jeff-shortDesc">{this.state.product.product_short_desc}</span>
           </h1>
-          <p className="product_cost">{`$${parseFloat(this.state.product.product_price).toFixed(2)}`}</p>
-          <div className="aggregatedRating">
-            <a style={revStyle} className="reviews" href="test">
-              <span className="stars">
+          <p className="jeff-product_cost">{`$${parseFloat(this.state.product.product_price).toFixed(2)}`}</p>
+          <div className="jeff-aggregatedRating">
+            <a style={revStyle} className="jeff-reviews" href="test">
+              <span className="jeff-stars">
                 <StarRatings
                   rating={this.state.product.product_avg_rev}
                   starRatedColor="gold"
@@ -64,7 +71,7 @@ class App extends React.Component {
                   starSpacing="0px"
                   name="rating"
                 />
-                <span className="reviewValue">
+                <span className="jeff-reviewValue">
                   {this.state.product.product_avg_rev}
                 </span>
                 <span className="numberOfRev">138 Reviews</span>
@@ -72,25 +79,21 @@ class App extends React.Component {
             </a>
           </div>
         </div>
-        <div className="product_ad_desc">
+        <div className="jeff-product_ad_desc">
           <span className="adDesc">{this.state.product.product_ad_desc}</span>
         </div>
-        <div className="productOptions">
+        <div className="jeff-productOptions">
           <ProductOptions
-            products={this.state.productList}
+            products={this.state.productOptions}
             handleProduct={this.handleProduct}
             product={this.state.product}
           />
         </div>
-        <div className="productPurchase">
-          <ProductPurchase />
-        </div>
-        <div className="stockCheck">
-          <StockCheck />
-        </div>
+        <ProductPurchase />
+        <StockCheck />
       </div>
     );
   }
 }
 
-export default App;
+export default ItemDescription;

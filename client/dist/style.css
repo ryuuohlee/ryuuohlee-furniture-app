@@ -50,25 +50,18 @@ input[type='number']::-webkit-outer-spin-button {
 	margin: 0;
 }
 
-h1 {
+.jeff_product_details {
+	width: 400px !important;
+}
+
+.jeff_product_heading_display {
 	font-size: 3rem;
-	line-height: 1.1667;
+	line-height: 0px;
 	letter-spacing: -0.84px;
-	margin: 0;
-	min-width: auto;
+	margin: 0px;
 }
 
-div {
-	width: 20rem !important;
-}
-
-.product_container {
-	display: inline;
-	margin: 25%;
-	margin-bottom: 1rem;
-}
-
-.product_age {
+.jeff_product_age {
 	margin: 0;
 	color: #fff;
 	background: #ca5007;
@@ -79,45 +72,37 @@ div {
 	line-height: 1rem;
 	margin: 0 0 0.1rem;
 	font-weight: 700;
-	min-width: auto;
 }
 
-
-.product_name {
+.jeff-product_name {
 	font-size: 1.25rem;
 	line-height: 2rem;
 	text-transform: uppercase;
-	min-width: auto;
 }
 
-.shortDesc {
+.jeff-shortDesc {
 	display: block;
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.5rem;
-	min-width: auto;
 }
 
-.product_cost {
-	margin: 0;
+.jeff-product_cost {
+	margin: 5px;
 	display: block;
 	font-weight: 700;
 	font-size: 2rem;
 	line-height: 1;
 	letter-spacing: -1px;
 	white-space: nowrap;
-	min-width: auto;
 }
 
-.aggregatedRating {
+.jeff-aggregatedRating {
 	display: inline-block;
+	margin-top: 10px;
 }
 
-.reviews {
-	display: inline-block;
-}
-
-.stars {
+.jeff-stars {
 	display: inline-block;
 	white-space: pre;
 }
@@ -131,22 +116,33 @@ div {
 	white-space: nowrap !important;
 }
 
-.reviewValue {
+.jeff-reviewValue {
 	display: inline-block;
 	padding: 0.33333rem;
 	color: black;
 	font-size: 100%;
 	font-style: normal !important;
-	min-width: auto;
 }
 
-.options {
-	display: block;
-	min-width: auto;
+.jeff-product_ad_desc {
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
-.dropSelector {
-	display: block;
+.jeff-productOptions {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.jeff-productCaption {
+	font-weight: 650;
+}
+
+#jeff-dropSelector {
+	display: inline-block;
+	overflow: visible;
+	min-height: fit-content;
+
 	width: 100%;
 	font-size: 1rem;
 	position: relative;
@@ -156,20 +152,43 @@ div {
 	text-align: left;
 	border: 1px solid #ccc;
 	border-radius: 2px;
+
 }
 
-.dropSelector:focus {
+.jeff-dropSelector:focus {
 	outline: none;
+}
+
+.jeff-cover {
+	color: gray;
+	font-size: 75%;
+	padding-top: 10px;
+
+}
+
+#ReactModalPortal {
+	position: relative;
+	display: block !important;
+	top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+#jeff-productForm {
+	position: strict;
+	min-width: auto;
+}
+
+.jeff-productImage {
+	width: auto;
+	height: auto;
+	padding: 1.5rem;
 }
 
 .colorOption {
 	display: block;
 	font-size: 125%;
-}
-
-.cover {
-	color: gray;
-	font-size: 75%;
 }
 
 .dropDown {
@@ -199,14 +218,6 @@ div {
 	outline: none;
 }
 
-.productOption {
-	display: inline-block;
-	margin: 10px;
-	border: 10px;
-	padding: 10px;
-	min-width: auto;
-}
-
 .choice {
 	display: block;
 	height: 85%;
@@ -218,39 +229,72 @@ div {
 	text-align: center;
 }
 
-.purchaseAmount {
-	position: static;
-	right: 0px;
-	display: block;
+/* quantity section */
+.jeff-productPurchase {
+	display: flex;
+	justify-content: space-between;
+	overflow: auto;
 }
 
-.quantityBox {
-	position: static;
-	display: inline-block;
-	right: 0px;
-	width: 9rem;
+.jeff-quantityForm {
+	width: 100%;
 }
 
-.amount {
+.jeff-quantitySpace {
+	display: inline-flex;
+	justify-content: space-between;
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.jeff-quantityAlign {
+	display: inline-flex;
+	justify-content: space-between;
+	width: 100%;
+	vertical-align: middle;
+}
+
+.jeff-quantity {
+	position: relative;
+	top: 15px;
+}
+
+.jeff-quantityControls {
+	display: inline-flex;
+	justify-content: flex-end center;
+	right: 0px;
+	height: 45px;
+	border: 1px lightslategray solid;
+	border-radius: 2px;
+}
+
+.jeff-amount {
 	text-align: center;
 	font-size: 0.875rem;
 	line-height: 1.7143;
 	height: 100%;
-	width: 50%;
+	width: 3rem;
 	padding: 0;
-	display: inline-block;
+	display: inline-flex;
+	border: 0px;
+	outline: none;
 }
 
-.quantityChange {
+.jeff-quantityChange {
 	display: inline-block;
-	border: 0;
+	border: 0px;
 	background-color: transparent;
 	text-align: center;
+	outline: none;
 }
 
-.addCart {
-	display: block;
+.jeff-addCart {
+	display: inline !important;
+	width: 100%;
 	border: 0;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	background-color: #0058a3;
 	color: white;
 	font-family: inherit;
@@ -259,10 +303,39 @@ div {
 	text-align: center;
 	margin-bottom: 1rem;
 	outline: none;
+	vertical-align: middle;
+	-webkit-box-pack: center;
+}
+
+.jeff-shoppingBag {
+	display: inline-block;
+	position: relative;
+	left: -5px;
+	height: 10%;
+	width: 10%;
+}
+
+.jeff-shopText{
+	display: inline-block;
+	position: relative;
+	top: -5px;
+	left: -5px;
+}
+
+.jeff-shoppingList {
+	display: inline-block;
+	position: relative;
+	top: 3px;
+	left: -5px;
+	height: 8%;
+	width: 8%;
 }
 
 .addList {
-	display: block;
+	display: flexbox;
+	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	border: 0;
 	background-color: #f5f5f5;
 	color: #111;
@@ -274,15 +347,78 @@ div {
 	outline: none;
 }
 
+.jeff-assembly {
+	display: inline-flex;
+	position: relative;
+	width: 100%;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	outline: none;
+}
+
+.jeff-assemblyLink {
+	display: inline-flex;
+	position: relative;
+	bottom: -5px;
+	outline: none;
+}
+
 .bunny {
+	display: inline-flex;
 	height: 10%;
 	width: 10%;
+}
+
+.jeff-assembly:hover {
+	background-color: #f5f5f5;
+}
+
+.jeff-deliveryInfo {
+	display: inline-flex;
+	position: relative;
+	width: 100%;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	outline: none;
+}
+
+.jeff-deliveryText {
+	display: inline-flex;
+	position: relative;
+	bottom: -8px;
+}
+
+.jeff-deliveryInfo:hover {
+	background-color: #f5f5f5;
+}
+
+.jeff-deliveryDetail {
+	padding: .5rem;
 }
 
 .info {
 	color: #0058a3;
 }
 
-.checkStore {
+.jeff-checkStore {
+	display: inline-flex;
+	position: relative;
 	border-top: 1px solid gray;
+	padding-top: 10px;
+	width: 100%;
 }
+
+.jeff-checkStore:hover {
+	background-color: #f5f5f5;
+}
+
+.jeff-csText {
+	display: inline-flex;
+	position: relative;
+	bottom: -8px;
+}
+
+/* .accordion__button:hover {
+	background-color: #ddd;
+} */
+
