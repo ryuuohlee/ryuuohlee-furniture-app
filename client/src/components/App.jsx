@@ -12,6 +12,7 @@ class ProductDetails extends React.Component {
 
     this.state = {
       productList: [],
+      productOptions: [],
       product: {},
     };
 
@@ -37,10 +38,17 @@ class ProductDetails extends React.Component {
         product: prevState.productList[initial],
       }));
     }
+    let productChoices = [];
+    for (var i = 0; i < this.state.productList.length; i++) {
+      if (this.state.productList[i].product_name === this.state.product.product_name) {
+        productChoices.push(this.state.productList[i]);
+      }
+    }
+    this.setState({ productOptions: productChoices });
   }
 
   render() {
-    console.log(this.state.productList);
+    console.log(this.state.productOptions);
     const revStyle = {
       textDecoration: 'none',
     };
@@ -77,7 +85,7 @@ class ProductDetails extends React.Component {
         </div>
         <div className="jeff-productOptions">
           <ProductOptions
-            products={this.state.productList}
+            products={this.state.productOptions}
             handleProduct={this.handleProduct}
             product={this.state.product}
           />
