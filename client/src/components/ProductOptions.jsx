@@ -19,9 +19,12 @@ class ProductOptions extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({
-      productColor: this.props.product.product_color,
-    });
+    console.log('PRODUCT COLOR', this.props.product);
+    setTimeout(() => {
+      this.setState({
+        productColor: this.props.product.product_color,
+      });
+    }, 500);
   }
 
   openModal() {
