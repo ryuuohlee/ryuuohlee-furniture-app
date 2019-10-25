@@ -5,7 +5,7 @@ import ProductOptions from './ProductOptions.jsx';
 import ProductPurchase from './ProductPurchase.jsx';
 import StockCheck from './StockCheck.jsx';
 
-class ItemDetails extends React.Component {
+class ItemDescription extends React.Component {
   constructor(props) {
     super(props);
 
@@ -96,4 +96,4 @@ class ItemDetails extends React.Component {
   }
 }
 
-export default ItemDetails;
+export default ItemDescription;
