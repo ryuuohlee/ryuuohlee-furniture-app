@@ -3,7 +3,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 
-Modal.setAppElement('#app');
+Modal.setAppElement('#ItemDetails');
 
 class ProductOptions extends React.Component {
   constructor(props) {
