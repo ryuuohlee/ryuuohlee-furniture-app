@@ -1,48 +1,58 @@
-//the dummy data to feed into the seed
+// the dummy data to feed into the seed
 
 const randomData = require('faker');
 
-//create a random number generator function
-var random = function(max) {
+// create a random number generator function
+let random = function (max) {
   return Math.floor(Math.random() * Math.floor(max));
 };
 
-//create random records
-  // structure the record into an object
-var ProductRecord = function() {
+// create random records
+// structure the record into an object
+let ProductRecord = function () {
   this.category = 'Living Room';
-  this.name = 'FRIHETEN';
+  this.names = ['BALKARP', 'BRATHULT', 'DELAKTIG', 'EKEBOL', 'FRIHETEN'];
   this.shortDesc = randomData.lorem.sentence();
   this.adDesc = randomData.lorem.sentence();
   this.price = randomData.commerce.price();
-  this.color_image = ['https://fec-piccolo.s3-us-west-1.amazonaws.com/bomstad+black.webp', 'https://fec-piccolo.s3-us-west-1.amazonaws.com/hyllie+beige.webp', 'https://fec-piccolo.s3-us-west-1.amazonaws.com/hyllie+dark+gray.webp', 'https://fec-piccolo.s3-us-west-1.amazonaws.com/skiftebo+blue.webp', 'https://fec-piccolo.s3-us-west-1.amazonaws.com/skiftebo+dark+gray.webp'];
-  this.color = ['Hyllie dark gray', 'Hyllie beige', 'Bomstad black', 'Skiftebo blue', 'Skiftebo dark gray'];
-  this.age = randomData.date.recent().toString().substring(0,10);
-  this.review = random(6);
-  this.data = [];
+  this.color_images = ['https://fec-piccolo.s3-us-west-1.amazonaws.com/bomstad+black.webp', 'https://fec-piccolo.s3-us-west-1.amazonaws.com/hyllie+beige.webp', 'https://fec-piccolo.s3-us-west-1.amazonaws.com/hyllie+dark+gray.webp', 'https://fec-piccolo.s3-us-west-1.amazonaws.com/skiftebo+blue.webp', 'https://fec-piccolo.s3-us-west-1.amazonaws.com/skiftebo+dark+gray.webp', 'https://fec-piccolo.s3-us-west-1.amazonaws.com/products/BALKARP-black.webp', 'https://fec-piccolo.s3-us-west-1.amazonaws.com/products/BALKARP-gray.webp', 'https://fec-piccolo.s3-us-west-1.amazonaws.com/products/BRATHULT-gray.webp', 'https://fec-piccolo.s3-us-west-1.amazonaws.com/products/BRATHULT-red.webp', 'https://fec-piccolo.s3-us-west-1.amazonaws.com/products/DELAKTIG-antracite.webp', 'https://fec-piccolo.s3-us-west-1.amazonaws.com/products/DELAKTIG-beige.webp', 'https://fec-piccolo.s3-us-west-1.amazonaws.com/products/DELAKTIG-blue.webp', 'https://fec-piccolo.s3-us-west-1.amazonaws.com/products/DELAKTIG-brown.webp', 'https://fec-piccolo.s3-us-west-1.amazonaws.com/products/DELAKTIG-gray.webp'];
+  this.colors = ['Hyllie dark gray', 'Hyllie beige', 'Bomstad black', 'Skiftebo blue', 'Skiftebo dark gray', 'red', 'black', 'gray', 'blue'];
+  this.age = Math.random();
+  this.review = parseFloat(random(6));
 };
 
-//creates a random list of products
-var randProdList = function(itemCount) {
-  var prodList = [];
-  for (var i = 0; i < itemCount; i++) {
-    var product = new ProductRecord;
+ProductRecord.prototype.name = function () {
+  return this.names[random(this.names.length)];
+};
 
-    var cat = product.category;
-    var nm = product.name;
-    var sd = product.shortDesc;
-    var ad = product.adDesc;
-    var amount = product.price;
-    var design = product.color_image[i];
-    var color = product.color[i];
-    var bd = product.age;
-    var likes = product.review;
+ProductRecord.prototype.color_image = function () {
+  return this.color_images[random(this.color_images.length)];
+};
 
-    prodList.push([cat, nm, sd, ad, amount, design, color, bd, likes]);
+ProductRecord.prototype.color = function () {
+  return this.colors[random(this.colors.length)];
+};
+
+// creates a random list of products
+let randProdList = function (itemCount) {
+  let prodList = [];
+  for (let i = 0; i < itemCount; i++) {
+    let product = new ProductRecord();
+
+    product.id = i;
+    let cat = product.category;
+    let nm = product.name();
+    let sd = product.shortDesc;
+    let ad = product.adDesc;
+    let amount = product.price;
+    let design = product.color_image();
+    let color = product.color();
+    let bd = product.age;
+    let likes = product.review;
+
+    prodList.push([product.id, cat, nm, sd, ad, amount, design, color, bd, likes]);
   }
   return prodList;
-}
-
-console.log(randProdList(4));
+};
 
 module.exports = randProdList;
