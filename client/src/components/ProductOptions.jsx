@@ -19,7 +19,6 @@ class ProductOptions extends React.Component {
   }
 
   componentDidMount() {
-    console.log('PRODUCT COLOR', this.props.product);
     setTimeout(() => {
       this.setState({
         productColor: this.props.product.product_color,
@@ -41,7 +40,6 @@ class ProductOptions extends React.Component {
 
 
   render() {
-    console.log(this.props);
     // eslint-disable-next-line react/prop-types
     const options = this.props.products.map((color) => (
       // eslint-disable-next-line react/jsx-key

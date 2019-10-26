@@ -1,5 +1,8 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable class-methods-use-this */
 // import requirements
 import React from 'react';
+import $ from 'jquery';
 import StarRatings from 'react-star-ratings';
 import ProductOptions from './ProductOptions.jsx';
 import ProductPurchase from './ProductPurchase.jsx';
@@ -16,6 +19,7 @@ class ItemDescription extends React.Component {
     };
 
     this.handleProduct = this.handleProduct.bind(this);
+    this.urlProductId = this.urlProductId.bind(this);
   }
 
   componentDidMount() {
@@ -25,20 +29,24 @@ class ItemDescription extends React.Component {
       .then(this.handleProduct);
   }
 
-  // selects a random product from the list of products to display
-  handleProduct(e) {
-    const initial = 2;
-    if (e) {
-      this.setState((prevState) => ({
-        product: prevState.productList[e.target.value],
-      }));
-    } else {
-      this.setState((prevState) => ({
-        product: prevState.productList[initial],
-      }));
+  getItemDescriptionById(id) {
+    // eslint-disable-next-line react/no-access-state-in-setstate
+    this.setState({ product: this.state.productList[this.urlProductId()] });
+  }
+
+  urlProductId() {
+    const questMarkLocation = (window.location.href).indexOf('?');
+    if (questMarkLocation === -1) {
+      return '1';
     }
-    let productChoices = [];
-    for (var i = 0; i < this.state.productList.length; i++) {
+    return (window.location.href).slice(questMarkLocation + 1);
+  }
+
+  // selects a random product from the list of products to display
+  handleProduct() {
+    var id = this.getItemDescriptionById(this.urlProductId);
+    const productChoices = [];
+    for (let i = 0; i < this.state.productList.length; i++) {
       if (this.state.productList[i].product_name === this.state.product.product_name) {
         productChoices.push(this.state.productList[i]);
       }
@@ -47,10 +55,10 @@ class ItemDescription extends React.Component {
   }
 
   render() {
-    console.log(this.state.productOptions);
     const revStyle = {
       textDecoration: 'none',
     };
+    console.log(this.state)
     return (
       <div className="jeff_product_details">
         <div className="product_price">
