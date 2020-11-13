@@ -1,6 +1,6 @@
-# Ikea Item Description
+# SofaMart Item Description
 
-> Project description
+> This project is a React component of a Item Description section of a product page. It allows you to select the color of the item and to toggle how many of that item you would like. It uses a MySQL database with a Node.js and Express server in a MVC(Model View Controller) set up.
 
 ## Related Projects
 
