@@ -1,5 +1,5 @@
 // server that connects client and database
-
+require('dotenv').config();
 // requirements
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -7,7 +7,7 @@ const cors = require('cors');
 const controller = require('./controller.js');
 
 const app = express();
-const port = 9000; // lol if you get this we are buds
+const port = process.env.PORT || 3000; // lol if you get this we are buds
 
 // Middleware
 app.use(cors());
