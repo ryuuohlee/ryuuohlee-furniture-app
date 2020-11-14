@@ -134,6 +134,12 @@ input[type='number']::-webkit-outer-spin-button {
 	margin-bottom: 15px;
 }
 
+.productOption {
+	display: inline-block;
+	position: relative;
+	text-align: center;
+}
+
 .jeff-productCaption {
 	font-weight: 650;
 }
@@ -176,14 +182,17 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 #jeff-productForm {
-	position: strict;
-	min-width: auto;
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	/* min-width: auto; */
 }
 
 .jeff-productImage {
-	width: auto;
+	width: 300px;
 	height: auto;
-	padding: 1.5rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
 }
 
 .colorOption {

@@ -17,5 +17,5 @@ CREATE TABLE products (
   product_avg_rev FLOAT(2, 1) NOT NULL
 );
 
-/* use mysql -u root < SCHEMA.sql to add database
+/* use mysql -u root < ./database/SCHEMA.sql to add database
 */

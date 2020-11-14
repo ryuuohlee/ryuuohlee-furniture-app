@@ -1,14 +1,14 @@
 //Database connection
-
+require('dotenv').config();
 const mysql = require('mysql');
 const randProdList = require('mysql');
 
 
 //connection details
 var connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
   database: 'ikea_products'
 });
 

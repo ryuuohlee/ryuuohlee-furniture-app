@@ -43,16 +43,16 @@ class ProductOptions extends React.Component {
     // eslint-disable-next-line react/prop-types
     const options = this.props.products.map((color) => (
       // eslint-disable-next-line react/jsx-key
-      <span className="productOption">
-        <input type="image" src={color.product_color_image} aria-label={color.product_color} className="jeff-productImage" />
-        <label className="productLabel">{color.product_color}</label>
-      </span>
+      <div className="productOption">
+        <img src={color.product_color_image} aria-label={color.product_color} className="jeff-productImage" />
+        <div>{color.product_color}</div>
+      </div>
     ));
 
     return (
       <div className="jeff-productOptions">
         <span className="jeff-productCaption">The price reflects selected options.</span>
-        <span className="options">
+        <div className="options">
           <button type="button" id="jeff-dropSelector" onClick={this.openModal}>
             <span className="jeff-cover">Cover:</span>
             <img className="dropDown" src="https://fec-piccolo.s3-us-west-1.amazonaws.com/keyboard_arrow_down-24px.svg" alt="down" />
@@ -71,10 +71,10 @@ class ProductOptions extends React.Component {
                 left: '0px',
                 right: '0px',
                 bottom: '0px',
-
-                backgroundColor: 'lightgray',
+                backgroundColor: 'rgba(0,0,0,0.5)',
               },
               content: {
+                // display: 'flex',
                 position: 'absolute',
                 top: '40px',
                 left: '40px',
@@ -89,16 +89,16 @@ class ProductOptions extends React.Component {
               },
             }}
           >
-            <span className="modalSetup">
+            <div className="modalSetup">
               <h2 className="modalTitle">Choose Cover</h2>
               <button type="submit" className="exit" onClick={this.closeModal} label="close"><img className="x" src="https://fec-piccolo.s3-us-west-1.amazonaws.com/clear-24px.svg" alt="" /></button>
-            </span>
+            </div>
 
-            <form id="jeff-productForm">
+            <div id="jeff-productForm">
               {options}
-            </form>
+            </div>
           </Modal>
-        </span>
+        </div>
       </div>
     );
   }
