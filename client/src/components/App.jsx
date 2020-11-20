@@ -23,7 +23,7 @@ class ItemDescription extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:9000/api/products')
+    fetch('ec2-54-177-189-227.us-west-1.compute.amazonaws.com' || 'http://localhost:9000/api/products')
       .then((productList) => productList.json())
       .then((productList) => this.setState({ productList }))
       .then(this.handleProduct);
